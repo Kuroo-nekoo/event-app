@@ -1,7 +1,10 @@
 import { ReactElement } from "react";
 import classes from "./logistics-item.module.scss";
 
-function LogisticsItem(props: { icon: ReactElement; children: ReactElement }) {
+function LogisticsItem(props: {
+  icon: () => ReactElement;
+  children: ReactElement;
+}) {
   const { icon: Icon } = props;
 
   return (
