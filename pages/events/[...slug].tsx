@@ -1,6 +1,7 @@
 import { useRouter } from "next/router";
 import EventList from "../../components/event/event-list";
 import ResultsTitle from "../../components/event/results-title";
+import ErrorAlert from "../../components/ui/error-alert";
 import { getFilteredEvents } from "../../dummy-data";
 import { IEvent } from "../../interface/IEvent";
 
@@ -20,11 +21,19 @@ const FilteredEventPage = () => {
       month: +router.query.slug[1],
     });
   } else {
-    return <div>Invalid filter</div>;
+    return (
+      <ErrorAlert>
+        <div>Invalid filter</div>
+      </ErrorAlert>
+    );
   }
 
   if (!filteredEvents || filteredEvents.length === 0) {
-    return <div>No event match the filter</div>;
+    return (
+      <ErrorAlert>
+        <div>No event match the filter</div>
+      </ErrorAlert>
+    );
   }
   return (
     <>
