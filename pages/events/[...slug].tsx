@@ -4,6 +4,7 @@ import ResultsTitle from "../../components/event/results-title";
 import ErrorAlert from "../../components/ui/error-alert";
 import { getFilteredEvents } from "../../dummy-data";
 import { IEvent } from "../../interface/IEvent";
+import Head from "next/head";
 
 const FilteredEventPage = () => {
   const router = useRouter();
@@ -37,6 +38,9 @@ const FilteredEventPage = () => {
   }
   return (
     <>
+      <Head>
+        <title>Fitlered Events</title>
+      </Head>
       <ResultsTitle
         date={new Date(+router.query.slug[0], +router.query.slug[1] - 1)}
       ></ResultsTitle>

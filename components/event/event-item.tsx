@@ -3,6 +3,7 @@ import Button from "../ui/Button";
 import DateIcon from "../icons/date-icon";
 import AddressIcon from "../icons/address-icon";
 import ArrowRightIcon from "../icons/arrow-right-icon";
+import Image from "next/image";
 
 const EventItem = ({
   title,
@@ -27,7 +28,7 @@ const EventItem = ({
 
   return (
     <li className={classes.item}>
-      <img src={`/${image}`} alt="image" />
+      <Image src={`/${image}`} alt="image" width={240} height={150} />
       <div className={classes.content}>
         <div className={classes.summary}>
           <h2>{title}</h2>

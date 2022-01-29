@@ -4,6 +4,7 @@ import EventLogistics from "../../components/event-detail/event-logistics";
 import EventSummary from "../../components/event-detail/event-summary";
 import { getEventById } from "../../dummy-data";
 import { IEvent } from "../../interface/IEvent";
+import Head from "next/head";
 
 const EventDetailPage = () => {
   const router = useRouter();
@@ -20,6 +21,9 @@ const EventDetailPage = () => {
 
   return (
     <>
+      <Head>
+        <title>{event.title}</title>
+      </Head>
       <EventSummary title={event.title}></EventSummary>
       <EventLogistics
         date={event.date}
